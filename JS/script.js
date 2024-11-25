@@ -19,3 +19,17 @@ document.addEventListener("mousemove", (e) => {
 document.addEventListener("mouseout", () => {
     cursor.style.display = "none";
 });
+
+// Select the menu button and menu
+const menuBtn = document.querySelector('.menu-btn');
+const menu = document.querySelector('.menu');
+
+// Toggle menu visibility on click
+menuBtn.addEventListener('click', () => {
+    if (menu.style.display === 'none' || menu.style.display === '') {
+        menu.style.display = 'flex'; // Show menu
+    } else {
+        menu.style.display = 'none'; // Hide menu
+    }
+});
+
