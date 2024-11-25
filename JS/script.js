@@ -1,3 +1,5 @@
+// Cursor
+
 const cursor = document.querySelector(".cursor");
 var timeout;
 
@@ -20,7 +22,7 @@ document.addEventListener("mouseout", () => {
     cursor.style.display = "none";
 });
 
-// Select the menu button and menu
+//  menu button and menu
 const menuBtn = document.querySelector('.menu-btn');
 const menu = document.querySelector('.menu');
 
@@ -33,3 +35,24 @@ menuBtn.addEventListener('click', () => {
     }
 });
 
+
+
+// Toggle Button for Light and Dark Mode
+const body = document.querySelector("body"),
+    togglebtn = document.querySelector(".toggle-btn");
+
+let getMode = localStorage.getItem("mode")
+if(getMode && getMode ==="dark"){
+    body.classList.add("dark");
+    togglebtn.classList.add("active")
+}
+togglebtn.addEventListener("click",() => {
+    body.classList.toggle("dark");
+
+    if(!body.classList.contains("dark")){
+        return localStorage.setItem("mode","light");
+    }
+     localStorage.setItem("mode","dark");
+
+})
+togglebtn.addEventListener("click", ()=> togglebtn.classList.toggle("active"));
